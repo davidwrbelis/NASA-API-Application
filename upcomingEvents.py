@@ -20,7 +20,7 @@ try:
         print('inside the if statement')
         data = response.json() # .json() method to immediately convert the response string
         print('success!')      #  method to immediately convert the response string into a usable Python dictionary or list
-        print(data)
+        #print(data)
         for i in range(0,10):
             space_image.append(data['results'][i]["image"]["thumbnail_url"])
             image_description.append(data['results'][i]["description"])
