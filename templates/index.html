@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="card grid-container" >
+        <div>
+            <img src="{{ url_for('static', filename='nasa_logo.png') }}" />
+
+        </div>
+        <div>
+            <h3>API APPLICATION</h3>
+            <h3>https://ll.thespacedevs.com/2.3.0/events/upcoming/</h3>
+            <a href="https://ll.thespacedevs.com/docs" class="logout-btn" target="_blank">API Home Page</a>
+       </div>
+    </div>
+    {% for i in p_return_list  %}
+    <div class="card grid-container2" >
+        <img src="{{ i['image'] }}" alt="No image available" width="150" height="150"/>
+        <h5>
+            <li>
+                <ol>{{ i['location']}}   </ol>
+                <ol>{{ i['slug'] }}</ol>
+                <ol>{{i['image_date'] }}</ol>
+            </li>
+        </h5>
+
+        <h5>{{ i['description'] }}</h5>
+    </div>
+    {% endfor %}
+{% endblock %}
